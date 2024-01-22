@@ -1,0 +1,20 @@
+import math
+
+def f(x):
+    return 4 * math.exp(-0.5 * x) - x
+
+def f_prime(x):
+    return -2 * math.exp(-0.5 * x) - 1
+
+def newton_raphson(x0, iterations):
+    x = x0
+    for i in range(iterations):
+        x = x - f(x) / f_prime(x)
+    return x
+
+x0 = 2
+iterations = 4
+
+# Newton-Raphson ile kök bulunur.
+root = newton_raphson(x0, iterations)
+print(f"denklemin bailangıç değeri:  x0 = {x0}, {iterations} kök: {root}")
