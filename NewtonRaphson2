@@ -1,0 +1,13 @@
+def f(x):
+    return x**(1/3)
+def f_prime(x):
+    return (1/3) * x**(-2/3)
+def newton_raphson(x0, iterasyon):
+    x = x0
+    for i in range(iterasyon):
+        x = x - f(x) / f_prime(x)
+    return x
+x0 = 2
+iterasyon = 4
+kok = newton_raphson(x0, iterasyon)
+print(f"denklemin başlangıç değeri x0 = {x0}, {iterasyon} kök: {kok}")
